@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="Slot_Machine_2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Slot_Machine_2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button Content="Start The Game" Foreground="White" Padding="15" VerticalAlignment="Bottom" FontSize="50" Width="500" Height="100" FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue" Margin="502,0,0,0" Click="NavigationButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1.0,1.0" StartPoint="0.0,0">
+                    <GradientStop Color="#ff05cd" Offset="0"/>
+                    <GradientStop Color="#313196" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Center" Text="Are you ready to try your luck ? 
+                   
+                   
+                   
+                   🔥🔥🔥" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="60" Padding="40" Foreground="Black" 
+                   FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue" TextAlignment="Center"/>
+
+        <TextBlock HorizontalAlignment="Left" Text="*by statictics only 0.001 % of players can score all 3 on hard mode" 
+                   VerticalAlignment="Top" TextWrapping="Wrap" 
+                   FontSize="20" Padding="30" Foreground="Black" 
+                   FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue" TextAlignment="Center"/>
+
+        <TextBlock HorizontalAlignment="Left" Padding="10" Text="Slot Machine game developed by NG and LO" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="1501" FontFamily="Assets/Fonts/BebasNeue-Book.otf#Bebas Neue" FontSize="20" />
+    </Grid>
+</Page>

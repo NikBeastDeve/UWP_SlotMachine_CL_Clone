@@ -1,0 +1,118 @@
+﻿<Page
+    x:Class="Slot_Machine_2.SlotMachinePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Slot_Machine_2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <DropDownButton ToolTipService.ToolTip="Alignment" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="20, 20, 20, 20" FontSize="60" Foreground="White" FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue">
+            <DropDownButton.Background>
+                <LinearGradientBrush EndPoint="1.0,1.0" StartPoint="0.0,0">
+                    <GradientStop Color="#ff05cd" Offset="0"/>
+                    <GradientStop Color="#313196" Offset="1"/>
+                </LinearGradientBrush>
+            </DropDownButton.Background>
+            <TextBlock FontSize="20" Text="Choose Difficulty" Foreground="White"/>
+            <DropDownButton.Flyout>
+                <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                    <MenuFlyoutItem Text="Easy" Tag="easy" 
+                            Click="AlignmentMenuFlyoutItem_ClickAsync" FontSize="20" FontFamily="Assets/Fonts/BebasNeue-Book.otf#Bebas Neue"/>
+                    <MenuFlyoutItem Text="Medium" Tag="medium"
+                            Click="AlignmentMenuFlyoutItem_ClickAsync" FontSize="20" FontFamily="Assets/Fonts/BebasNeue-Book.otf#Bebas Neue"/>
+                    <MenuFlyoutItem Text="Hard" Tag="hard"
+                            Click="AlignmentMenuFlyoutItem_ClickAsync" FontSize="20" FontFamily="Assets/Fonts/BebasNeue-Book.otf#Bebas Neue"/>
+                </MenuFlyout>
+            </DropDownButton.Flyout>
+        </DropDownButton>
+
+        <TextBlock FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue" Name="roundText" HorizontalAlignment="Center" Text="Welcome to my spinning game!"
+                   TextWrapping="Wrap" VerticalAlignment="Top" FontSize="60" Padding="40" Foreground="Black"/>
+
+        <Grid Name="lettersGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20, 20, 20, 20" Width="1004">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1.0,1.0" StartPoint="0.0,0">
+                    <GradientStop Color="#ff05cd" Offset="0"/>
+                    <GradientStop Color="#313196" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue" Name="firstText" HorizontalAlignment="Left"  Text="A" Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center" Height="235" Width="176"  FontSize="150" TextAlignment="Center" Padding="16,24" Margin="20,0,0,0">
+                <TextBlock.RenderTransform>
+                    <RotateTransform x:Name="MyRotateTransform" Angle="90" CenterX="0" CenterY="0"/>
+                </TextBlock.RenderTransform>
+
+  <!-- Animates the text block's rotation. -->
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+            Storyboard.TargetName="MyRotateTransform" 
+            Storyboard.TargetProperty="(RotateTransform.Angle)"
+            From="0.0" To="360" Duration="0:0:2" 
+            RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue" Name="secondText" Foreground="White" HorizontalAlignment="Left"  Text="B"  TextWrapping="Wrap" VerticalAlignment="Center" Height="235" Width="176"  FontSize="150" TextAlignment="Center" Padding="16,24" Margin="412,0,0,0">
+                <TextBlock.RenderTransform>
+                    <RotateTransform x:Name="MyRotateTransform_2" Angle="90" CenterX="0" CenterY="0"/>
+                </TextBlock.RenderTransform>
+
+  <!-- Animates the text block's rotation. -->
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+            Storyboard.TargetName="MyRotateTransform_2" 
+            Storyboard.TargetProperty="(RotateTransform.Angle)"
+            From="0.0" To="360" Duration="0:0:2" 
+            RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue" Name="thirdText" HorizontalAlignment="Left"  Text="C" Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center" Height="235" Width="176"  FontSize="150" TextAlignment="Center" Padding="16,24" Margin="804,0,0,0">
+                <TextBlock.RenderTransform>
+                    <RotateTransform x:Name="MyRotateTransform_1" Angle="90" CenterX="0" CenterY="0"/>
+                </TextBlock.RenderTransform>
+
+  <!-- Animates the text block's rotation. -->
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+            Storyboard.TargetName="MyRotateTransform_1" 
+            Storyboard.TargetProperty="(RotateTransform.Angle)"
+            From="0.0" To="360" Duration="0:0:2" 
+            RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+        </Grid>
+
+        <Button FontFamily="Assets/Fonts/BebasNeue-Book.otf#Bebas Neue" Name="spinButton" Content="Spin" Click="SpinButton_Click" Foreground="White"
+                HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="50" Background="Black" Width="300" Height="100" Padding="20"/>
+
+        <Button FontFamily="Assets/Fonts/BebasNeue-Book.otf#Bebas Neue" Name="cancelButton" Content="go back" Click="CancelButton_Click" Foreground="White"
+                HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Background="Red" Width="100" Height="60"/>
+
+        <Grid Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,0,0,29">
+            <TextBlock FontFamily="Assets/Fonts/BebasNeue-Bold.otf#Bebas Neue" HorizontalAlignment="Left" Text="Score: " TextWrapping="Wrap" VerticalAlignment="Bottom" Width="44" FontSize="21" Height="20"/>
+            <Rectangle Name="scoreOne" HorizontalAlignment="Left" Stroke="Black" VerticalAlignment="Top" Width="18" Height="18"/>
+            <Rectangle Name="scoreTwo" HorizontalAlignment="Center" Stroke="Black" VerticalAlignment="Top" Width="18" Height="18"/>
+            <Rectangle Name="scoreThree" HorizontalAlignment="Right" Stroke="Black" VerticalAlignment="Top" Width="18" Height="18"/>
+        </Grid>
+
+    </Grid>
+</Page>
